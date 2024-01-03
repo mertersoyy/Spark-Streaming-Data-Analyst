@@ -1,17 +1,17 @@
 # Streaming Data
 ## Realtime Data
-##Google Cloud
+## Google Cloud
 ## Docker
 ## Kafka
 ## Nifi
 ## Apache Spark
-##BigQuery
+## BigQuery
 ## looker
 
 
 **Realtime Data**
 
-Since the data we have does not come through a web service, I used the {} file to make our csv data behave like instantaneous data flowing through Python.
+Since the data we have does not come through a web service, I used the {kafka_consume.pynb} (the first part) file to make our csv data behave like instantaneous data flowing through Python.
 
 **Google Cloud**
 
@@ -20,6 +20,7 @@ We create a machine for ourselves using the compute engine tool on Google Cloud.
 **Docker**
 
 We need to start Docker on this PC with SSH language. We will run Kafka and Nifi with our containers via Docker.
+You can find docker necessary part which is kafka and nifi here {docker-compose.yml}
 
 sudo apt update
 sudo apt upgrade
@@ -41,17 +42,17 @@ I created a test-run file. It converts my data to json.
 
 **Spark**
 
-pyspark --packages org.apache.spark:spark-sql-kafka-0.10_2:12:3.1.2 --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar
+pyspark --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar
 
 I define kafka and bigquery to pyspark in hive environment.
 
 We make uploads that are suitable for our data. We use from json to read the data coming from Kafka.
 
-{}I'm putting our file here.
+{kafka_consume.ipynb}(the second part) I'm putting our file here.
 
 **Bigquery**
 
-I create my schemas in the table under the database I created, their data types must be the same as the types I took from my CSV data and defined in the {} file.
+I create my schemas in the table under the database I created, their data types must be the same as the types I took from my CSV data and defined in the {kafka_consume.ipynb} file.
 
 The remaining operations are SQL queries
 
