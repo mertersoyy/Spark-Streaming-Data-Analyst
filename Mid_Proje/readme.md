@@ -1,6 +1,7 @@
 # Streaming Data
 
-![Pipeline Architect](mimari.png)
+![Pipeline Architect]
+(mimari.png)
 
 **Realtime Data**
 
