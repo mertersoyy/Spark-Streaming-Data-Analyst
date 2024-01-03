@@ -1,8 +1,5 @@
 # Streaming Data
 
-![alt text](http://[url](https://hizliresim.com/f3pvupp)/to/img.png)
-
-
 ## Step by Step
 
 **Realtime Data**
