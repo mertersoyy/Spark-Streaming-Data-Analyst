@@ -4,7 +4,7 @@
 
 **Realtime Data**
 
-Since the data we have does not come through a web service, I used the {kafka_consume.pynb} (the first part) file to make our csv data behave like instantaneous data flowing through Python.
+Since the data we have does not come through a web service, I used the {csvtorealtime.py} file to make our csv data behave like instantaneous data flowing through Python.
 
 **Google Cloud**
 
@@ -41,7 +41,7 @@ I define kafka and bigquery to pyspark in hive environment.
 
 We make uploads that are suitable for our data. We use from json to read the data coming from Kafka.
 
-{kafka_consume.ipynb}(the second part) I'm putting our file here.
+{sparktokafka&bq.py} I'm putting our file here.
 
 **Bigquery**
 
