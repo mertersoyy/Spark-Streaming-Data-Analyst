@@ -1,13 +1,4 @@
-# Streaming Data
-## Realtime Data
-## Google Cloud
-## Docker
-## Kafka
-## Nifi
-## Apache Spark
-## BigQuery
-## looker
-
+## Streaming Data
 
 **Realtime Data**
 
