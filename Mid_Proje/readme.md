@@ -12,7 +12,7 @@ We create a machine for ourselves using the compute engine tool on Google Cloud.
 
 **Docker**
 
-We need to start Docker on this PC with SSH language. We will run Kafka and Nifi with our containers via Docker.
+We need to start Docker on this PC with SSH. We will run Kafka and Nifi with our containers via Docker.
 
 sudo apt update
 sudo apt upgrade
