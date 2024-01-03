@@ -1,7 +1,7 @@
 # Streaming Data
 
-![Pipeline Architect]
-(mimari.png)
+Pipeline Architect
+![Pipeline Architect](mimari.png)
 
 **Realtime Data**
 
@@ -53,8 +53,9 @@ The remaining operations are SQL queries
 
 I visualize the queries I make in BigQuery on Looker.
 
+q1 Solutions
 ![q1 Solutions](q1LookerDashboard.png)
-
+q2 Solutions
 ![q2 Solutions](q2LookerDashboard.png)
-
+q3 Solutions
 ![q3 Solutions](q3LookerDashboard.png)
