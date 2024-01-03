@@ -1,61 +1,59 @@
 # Streaming Data
 
-![Pipeline Architect](mimari.png)
+![Pipeline Architect](architecture.png)
 
 **Realtime Data**
 
-Elimizdeki data bir web service üzerinden gelmediği için {} dosya ile csv datamızı python üzerinden anlık akan bir data gibi davranmasını sağladım.
+Since the data we have does not come through a web service, I used the {csv_realtime.py} file to make our csv data behave like instantaneous data flowing through Python.
 
 **Google Cloud**
 
-Google Cloud üzerinden compute engine tool'unun kullanarak kendimize bir makine oluşturuyoruz burada ki temel amaç kendi bilgisayarımızdan değil google üzerinden kiraladığımız bilgisayardan işlemlerimize devam etmek. Burada SSH platformu kullanıyoruz.
+We create a machine for ourselves using the compute engine tool on Google Cloud. The main purpose here is to continue our operations not from our own computer, but from the computer we rented from Google. We are using SSH platform here.
 
 **Docker**
 
-SSH dili ile bu pc de dockerı ayağa kaldırmamız gerekiyor docker üzerinden de containerlarımız ile kafka ve nifiyi ayağa kaldırıcaz.
+We need to start Docker on this PC with SSH language. We will run Kafka and Nifi with our containers via Docker.
 
 sudo apt update
 sudo apt upgrade
 sudo apt install docker.io
 sudo apt install docker-compose
-nano docker-compose.yml --> docker.compose.yml dosyasını tanımlattığımız alan burası olacaktır.
+nano docker-compose.yml --> This will be the area where we define the docker.compose.yml file.
 sudo docker-compose up -d
 
-sonrasında kafka ve nifiye erişim sağlayabiliriz.
+Then we can access kafka and nifi.
 
 
 **Nifi**
 
-Burda python üzerinden gelen datamızı kafkadan nifiye çektik. Json formatına çevirip istediğimiz filtrelendirmeyi verip Google Cloud a Json dosyası olarak gönderdik.
+Here, we pulled our data coming from Python from Kafka. We converted it to Json format, gave it the filtering we wanted, and sent it to Google Cloud as a Json file.
 
 **Kafka**
 
-Bir test-çalışma dosyası oluşturdum. Datamı json a çeviriyor.
+I created a test-run file. It converts my data to json.
 
 **Spark**
 
 pyspark --packages org.apache.spark:spark-sql-kafka-0.10_2:12:3.1.2 --jars=gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar
 
-ile hive ortamında pyspark'a kafka ve bigquery i tanımlıyorum.
+I define kafka and bigquery to pyspark in hive environment.
 
-verimize uygun olan yüklemeleri yapıyoruz kafkadan gelen veriyi okuyamabilmek için from json kullanıyoruz.
+We make uploads that are suitable for our data. We use from json to read the data coming from Kafka.
 
-{}dosyamızı buraya koyuyorum.
+{spark_kafka_bg}I'm putting our file here.
 
 **Bigquery**
 
-Oluşturduğum databaseim altındaki tabloda schemalarımı oluşturuyorum bunların veri tipleri csv datamdan aldığım ve {} dosyanın içinde tanımladığım tipler ile aynı olmalı.
+I create my schemas in the table under the database I created, their data types must be the same as the types I took from my CSV data and defined in the {spark_kafka_bg} file.
 
-Geri kalan işlemler SQL sorguları
+The remaining operations are SQL queries
 
 **Looker**
 
-BigQuery de yaptığım sorguları Looker üzerinde görselleştiriyorum.
+I visualize the queries I make in BigQuery on Looker.
 
 ![q1 Solutions](q1LookerDashboard.png)
 
 ![q2 Solutions](q2LookerDashboard.png)
 
 ![q3 Solutions](q3LookerDashboard.png)
-
-
