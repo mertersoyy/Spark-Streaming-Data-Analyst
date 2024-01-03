@@ -1,4 +1,4 @@
-/*
+
 SELECT Category,count(*) AS Total_Sales,Gender as Gender,
 CASE WHEN Gender='Male' and Age BETWEEN 0 AND 24 THEN 'Ergen 0-24'
 	  WHEN Gender='Male' and Age BETWEEN 25 AND 44 THEN 'Genç 25-44'
@@ -15,4 +15,4 @@ FROM `skilled-module-406113.mid_proje.shopping_behavior`
 GROUP BY Age,Category,Gender
 ORDER BY Total_Sales DESC
 LIMIT 10
-*/
+
